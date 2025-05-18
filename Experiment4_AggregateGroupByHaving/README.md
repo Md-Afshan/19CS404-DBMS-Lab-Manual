@@ -36,126 +36,188 @@ GROUP BY column_name
 HAVING condition;
 ```
 
-**Question 1**
---
--- Paste Question 1 here
+### MODULE QUESTIONS
+```
+NAME -  MUHAMMAD AFSHAN A
+REGISTER NUMBER - 212223100035
+```
 
-```sql
--- Paste your SQL code below for Question 1
+**Question 1**
+
+How many patients have expired insurance coverage for each insurance company?
+
+Sample table:Insurance Table
+
+![alt text](image.png)
+
+```
+select InsuranceCompany,count(*) as TotalExpiredPatients
+
+from Insurance
+
+group by InsuranceCompany;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](image-1.png)
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
+How many prescriptions were written by each doctor? Sample tablePrescriptions Table
+
+![alt text](image-2.png)
+
+```
+SELECT DoctorID,count(*) as TotalPrescriptions
+
+from Prescriptions
+
+group by DoctorID;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](image-3.png)
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
-```
+What is the total number of appointments scheduled by each doctor?
+
+Sample table:Appointments Table
+
+![alt text](image-4.png)
 
 **Output:**
 
-![Output3](output.png)
+![alt text](image-5.png)
 
 **Question 4**
----
--- Paste Question 4 here
 
-```sql
--- Paste your SQL code below for Question 4
+Write a SQL query to find the Fruit with the lowest available quantity.
+
+![alt text](image-6.png)
+
+```
+select name as fruit_name , min(inventory) as lowest_quantity
+
+from fruits;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](image-7.png)
 
 **Question 5**
----
--- Paste Question 5 here
 
-```sql
--- Paste your SQL code below for Question 5
+Write a SQL query to calculate total available amount of fruits that has a price greater than 0.5 . Return total Count.
+
+Note: Inventory attribute contains amount of fruits
+
+![alt text](image-8.png)
+
+```
+select sum(inventory) as total_available_amount
+
+from fruits
+
+where price>0.5;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](image-9.png)
 
 **Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
+Write a SQL query to find the average salary of all employees?
+
+![alt text](image-10.png)
+
+```
+select avg(income) as Average_Salary
+
+from employee;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](image-11.png)
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
+Write a SQL query to determine the number of customers who received at least one grade for their activity.
+
+![alt text](image-12.png)
+
+```
+SELECT COUNT(customer_id) AS COUNT
+
+FROM customer
+
+where grade is not null;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](image-13.png)
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
+Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
+
+![alt text](image-14.png)
+
+```
+select category_id,sum(price) as Total_Cost
+
+from products
+
+group by category_id
+
+having Total_Cost>50;
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](image-15.png)
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+Write a SQL query to find the difference between the maximum and minimum price of fruits?
+
+![alt text](image-16.png)
+
+```
+select (max(price)-min(price)) as price_diff
+
+from fruits;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](image-17.png)
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
+Write a SQL query to find the average length of names for people living in Chennai?
+
+![alt text](image-18.png)
+
+```
+select avg(length(name)) as avg_name_length
+
+from customer
+
+where city like '%Chennai%';
+
 ```
 
 **Output:**
 
-![Output10](output.png)
-
+![alt text](image-19.png)
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
